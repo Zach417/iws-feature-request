@@ -11,53 +11,6 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-#banner {
-  height: 75px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-}
-
-#banner-logo {
-  height: 23px;
-  margin: 26px 15px;
-}
-
-#banner-nav {
-  float: right;
-  list-style: none;
-  display: inline-block;
-  height: 75px;
-  margin: 0px;
-}
-
-.banner-nav-li {
-  font-size: 22px;
-  height: 75px;
-  line-height: 75px;
-  padding: 0 25px;
-  cursor: pointer;
-  text-transform: uppercase;
-  -webkit-transition: all 300ms ease-out;
-  -moz-transition: all 300ms ease-out;
-  -ms-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-}
-
-.banner-nav-li:hover {
-  color: white;
-  background-color: #4FAFC2;
-}
-
-.banner-container {
-
-}
-
-.banner-row {
-}
-.component-container-header {
-  padding: 30px 0;
-}
-
 .component-container-body {
   padding-top: 20px;
   padding-bottom: 20px;
