@@ -1,5 +1,5 @@
 # iws-feature-request
-A simple tool for Intuitive Web Solutions team members to record features requested by clients.
+A simple tool for Intuitive Web Solutions team members to record features requested by clients. Application is up at http://54.191.112.74/
 
 ## About the app
 The technology stack of this app is React.js, Node.js, and MongoDB. This stack makes it so that almost 100% of the codebase is in JavaScript. The front-end architecture takes advantage of React's one-way data flow model by utilizing a dispatcher to close the loop between actions and data stores.
