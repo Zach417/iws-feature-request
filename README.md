@@ -4,6 +4,8 @@ A simple tool for Intuitive Web Solutions team members to record features reques
 ## About the app
 The technology stack of this app is React.js, Node.js, and MongoDB. This stack makes it so that almost 100% of the codebase is in JavaScript. The front-end architecture takes advantage of React's one-way data flow model by utilizing a dispatcher to close the loop between actions and data stores.
 
+Furthermore, the front-end communicates with the back-end via a restful API at path /stores. For example, you can get all of the features json by visiting http://54.191.112.74/stores/feature. To get a specific doc's json, visit /stores/feature/:id. The API accepts GET, POST, PUT, and DELETE commands.
+
 ## Running the app in 20 easy steps
 If you want to load the app onto a blank ec2, below is the set of commands for getting this web app running on an ec2 with Amazon Linux AMI 2016.03.0. I usually have issues getting MongoDB off the ground, so if you get an error when you execute #14, I would just recommend that you yum remove mongodb-org, yum autoremove the dependencies, and retry the installation. Double check you're installing MongoDB 2.6 as well.
 #### Basics
