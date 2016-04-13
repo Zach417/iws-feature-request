@@ -51,6 +51,7 @@ var FinderBody = React.createClass({
             columnMeta={columnMeta}
             columns={["Title","Client","Priority"]}
             resultsPerPage={20}
+            showFilter={true}
             onRowClick={this.handleClick_Row} />
         </div>
       </div>
