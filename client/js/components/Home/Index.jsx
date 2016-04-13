@@ -30,7 +30,7 @@ var Home = React.createClass({
   },
 
   handleClick_Finder: function () {
-
+    browserHistory.push("/find");
   },
 });
 

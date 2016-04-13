@@ -4,10 +4,15 @@ var Style = require('./Style.jsx');
 var Label = require('../../Form/Index.jsx').Label;
 var Input = require('../../Form/Index.jsx').Input;
 var TextArea = require('../../Form/Index.jsx').TextArea;
+var Select = require('../../Form/Index.jsx').Select;
 
 var LoggerBody = React.createClass({
   componentWillMount: function () {
     this.feature = this.props.feature;
+  },
+
+  componentWillReceiveProps: function (props) {
+    this.feature = props.feature;
   },
 
   render: function () {
@@ -35,6 +40,34 @@ var LoggerBody = React.createClass({
               value={this.props.feature.description}
               onChange={this.handleChange_Description} />
           </div>
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <Label isRequired={false} label={"Client"} />
+            <Select
+              value={this.props.feature.client}
+              options={["Client A","Client B","Client C"]}
+              onChange={this.handleChange_Client} />
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <Label isRequired={false} label={"Client Priority"} />
+            <Input
+              type={"text"}
+              value={this.feature.clientPriority}
+              onChange={this.handleChange_ClientPriority} />
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <Label isRequired={false} label={"Ticket URL"} />
+            <Input
+              type={"text"}
+              value={this.feature.ticketUrl}
+              onChange={this.handleChange_TicketUrl} />
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <Label isRequired={false} label={"Product Area"} />
+            <Select
+              value={this.props.feature.productArea}
+              options={["Policies","Billing","Claims","Reports"]}
+              onChange={this.handleChange_ProductArea} />
+          </div>
         </div>
       </div>
     )
@@ -52,6 +85,26 @@ var LoggerBody = React.createClass({
 
   handleChange_Description: function (event) {
     this.feature.description = event.target.value;
+    this.props.onChange(this.feature);
+  },
+
+  handleChange_Client: function (event) {
+    this.feature.client = event.target.value;
+    this.props.onChange(this.feature);
+  },
+
+  handleChange_ClientPriority: function (event) {
+    this.feature.clientPriority = event.target.value;
+    this.props.onChange(this.feature);
+  },
+
+  handleChange_TicketUrl: function (event) {
+    this.feature.ticketUrl = event.target.value;
+    this.props.onChange(this.feature);
+  },
+
+  handleChange_ProductArea: function (event) {
+    this.feature.productArea = event.target.value;
     this.props.onChange(this.feature);
   },
 });

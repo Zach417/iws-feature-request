@@ -20,7 +20,7 @@ var NavItem = React.createClass({
         onClick={this.props.onClick}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}>
-        Back
+        {this.props.label}
       </li>
     )
   },

@@ -14,9 +14,4 @@ module.exports = {
     float: "none",
     margin: "0px auto",
   },
-  error: {
-    color: "#c36b74",
-    textAlign: "left",
-    padding: "15px 0px",
-  }
 }

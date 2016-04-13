@@ -14,7 +14,7 @@ module.exports = {
     cursor: "pointer",
   },
   nav: {
-    display: "none",
+    display: "inline-block",
     float: "right",
     listStyle: "none",
     height: "75px",
@@ -29,6 +29,7 @@ module.exports = {
     textTransform: "uppercase",
     color: "#777",
     backgroundColor: "white",
+    display: "inline-block",
   },
   navButtonHovered: {
     fontSize: "22px",
@@ -39,5 +40,6 @@ module.exports = {
     textTransform: "uppercase",
     color: "white",
     backgroundColor: "#4FAFC2",
+    display: "inline-block",
   },
 }

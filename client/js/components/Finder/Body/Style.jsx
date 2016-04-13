@@ -1,8 +1,4 @@
 module.exports = {
-  title: {
-    textAlign: "center",
-    margin: "30px 0 50px 0",
-  },
   container: {
     color: "#777",
   },
@@ -14,9 +10,8 @@ module.exports = {
     float: "none",
     margin: "0px auto",
   },
-  error: {
-    color: "#c36b74",
+  buttonContainer: {
     textAlign: "left",
-    padding: "15px 0px",
+    marginTop: "10px",
   }
 }

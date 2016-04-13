@@ -22,13 +22,21 @@ var LoggerActions = React.createClass({
 
   handleClick_Save: function () {
     if (!this.props.feature._id) {
-      FeatureStore.insert(this.props.feature, function () {
-        console.log("inserted!");
-      });
+      FeatureStore.insert(this.props.feature, function (res) {
+        if (res.success === false) {
+          this.props.onError(res.message);
+        } else {
+          this.props.onSuccess();
+        }
+      }.bind(this));
     } else {
-      FeatureStore.update(this.props.feature, function () {
-        console.log("updated!");
-      });
+      FeatureStore.update(this.props.feature, function (res) {
+        if (res.success === false) {
+          this.props.onError(res.message);
+        } else {
+          this.props.onSuccess();
+        }
+      }.bind(this));
     }
   },
 

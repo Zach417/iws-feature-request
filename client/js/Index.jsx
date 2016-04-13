@@ -9,6 +9,7 @@ var IndexRoute = require('react-router').IndexRoute;
 var Header = require('./components/Header/Index.jsx');
 var Home = require('./components/Home/Index.jsx');
 var Logger = require('./components/Logger/Index.jsx');
+var Finder = require('./components/Finder/Index.jsx');
 var Footer = require('./components/Footer/Index.jsx');
 
 var App = React.createClass({
@@ -26,7 +27,9 @@ var App = React.createClass({
 var Routes = (
   <Route path="/" component={App}>
 		<IndexRoute component={Home} />
+    <Route path="/log/:id" component={Logger} />
     <Route path="/log" component={Logger} />
+    <Route path="/find" component={Finder} />
   </Route>
 );
 

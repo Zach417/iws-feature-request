@@ -1,9 +1,9 @@
 module.exports = {
   title: {
-    textAlign: "center",
-    margin: "30px 0 50px 0",
+    textAlign: "left",
   },
   container: {
+    padding: "0px",
     color: "#777",
   },
   row: {
@@ -14,9 +14,4 @@ module.exports = {
     float: "none",
     margin: "0px auto",
   },
-  error: {
-    color: "#c36b74",
-    textAlign: "left",
-    padding: "15px 0px",
-  }
 }

@@ -1,4 +1,5 @@
 var React = require('react');
+var browserHistory = require('react-router').browserHistory;
 var Style = require('./Style.jsx');
 var NavItem = require('./NavItem.jsx');
 
@@ -12,8 +13,9 @@ var Header = React.createClass({
               style={Style.logo}
               onClick={this.handleClick_Logo}
               src="http://www.britecore.com/static/images/britecore-logo.png" />
-            <ul style={Style.nav} id="banner-nav">
-              <NavItem label={"Back"} onClick={this.handleClick_Back} />
+            <ul style={Style.nav} className="hidden-xs">
+              <NavItem label={"log"} onClick={this.handleClick_Log} />
+              <NavItem label={"find"} onClick={this.handleClick_Find} />
             </ul>
           </div>
         </div>
@@ -22,11 +24,15 @@ var Header = React.createClass({
   },
 
   handleClick_Logo: function () {
-    window.location.href = "http://www.britecore.com/";
+    browserHistory.push("/");
   },
 
-  handleClick_Back: function () {
-    window.location.href = "http://www.britecore.com/";
+  handleClick_Log: function () {
+    browserHistory.push("/log");
+  },
+
+  handleClick_Find: function () {
+    browserHistory.push("/find");
   },
 });
 
