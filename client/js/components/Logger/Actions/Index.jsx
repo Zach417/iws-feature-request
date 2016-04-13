@@ -57,7 +57,7 @@ var LoggerActions = React.createClass({
   },
 
   handleClick_Cancel: function () {
-    browserHistory.push("/");
+    browserHistory.push("/find");
   },
 
   handleClick_Delete: function () {
