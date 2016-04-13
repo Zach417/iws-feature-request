@@ -2,22 +2,25 @@ var AppDispatcher = require('../dispatcher/AppDispatcher.js');
 var Constants = require('../constants/FeatureConstants.js');
 
 var Actions = {
-	update: function(doc) {
+	update: function(doc, callback) {
 		AppDispatcher.dispatch({
 			actionType: Constants.FEATURE_UPDATE,
-			doc: doc
+			doc: doc,
+			callback: callback,
 		});
 	},
-	create: function(doc) {
+	create: function(doc, callback) {
 		AppDispatcher.dispatch({
 			actionType: Constants.FEATURE_CREATE,
-			doc: doc
+			doc: doc,
+			callback: callback,
 		});
 	},
-	destroy: function(doc) {
+	destroy: function(doc, callback) {
 		AppDispatcher.dispatch({
 			actionType: Constants.FEATURE_DESTROY,
-			doc: doc
+			doc: doc,
+			callback: callback,
 		});
 	},
 };

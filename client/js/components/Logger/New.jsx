@@ -57,7 +57,7 @@ var Logger = React.createClass({
   },
 
   handleSuccess: function () {
-    browserHistory.push("/");
+    browserHistory.push("/find");
   },
 
   handleError: function (message) {

@@ -26,14 +26,14 @@ var FormSelect = React.createClass({
   },
 
   getOptions: function () {
-    return this.props.options.map(function (option) {
+    return this.props.options.map(function (option, i) {
       if (typeof option === "string") {
         return (
-          <option value={option}>{option}</option>
+          <option key={i} value={option}>{option}</option>
         )
       }
       return (
-        <option value={option.value}>{option.label}</option>
+        <option key={i} value={option.value}>{option.label}</option>
       )
     });
   },

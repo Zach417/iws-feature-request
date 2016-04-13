@@ -42,6 +42,14 @@ var FinderBody = React.createClass({
     }.bind(this));
   },
 
+  componentDidMount: function() {
+    FeatureStore.addChangeListener(this.handleChange_FeatureStore);
+  },
+
+  componentWillUnmount: function() {
+    FeatureStore.removeChangeListener(this.handleChange_FeatureStore);
+  },
+
   render: function () {
     return (
       <div style={Style.container} className="container-fluid">
@@ -74,6 +82,14 @@ var FinderBody = React.createClass({
 
   handleClick_Row: function (gridRow, event) {
     browserHistory.push("/log/" + gridRow.props.data.id);
+  },
+
+  handleChange_FeatureStore: function () {
+    FeatureStore.get(function (docs) {
+      this.setState({
+        features: docs
+      });
+    }.bind(this));
   },
 });
 
