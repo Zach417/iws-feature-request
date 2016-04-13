@@ -5,11 +5,15 @@ module.exports = {
     fontFamily: "'Josefin Sans', sans-serif",
   },
   container: {
-    padding: "30px 0",
+    padding: "50px 0",
     color: "#777",
   },
+  containerAlt: {
+    padding: "50px 0",
+    color: "#777",
+    backgroundColor: "#eee",
+  },
   row: {
-    textAlign: "center",
   },
   component: {
     float: "none",
@@ -17,6 +21,7 @@ module.exports = {
     margin: "0px auto",
   },
   button: {
+    textAlign: "center",
     fontFamily: "'Josefin Sans', sans-serif",
     color: "white",
     fontSize: "22px",
@@ -31,6 +36,7 @@ module.exports = {
     msUserSelect: "none"
   },
   buttonHovered: {
+    textAlign: "center",
     fontFamily: "'Josefin Sans', sans-serif",
     color: "white",
     fontSize: "22px",

@@ -9,3 +9,7 @@ html, body {
 h1, h2, h3 {
   text-transform: uppercase;
 }
+
+.top-section {
+  padding: 0px 0px 20px 0px;
+}
