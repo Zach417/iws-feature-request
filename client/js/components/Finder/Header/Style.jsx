@@ -1,6 +1,7 @@
 module.exports = {
   title: {
     textAlign: "left",
+    fontFamily: "'Josefin Sans', sans-serif",
   },
   container: {
     padding: "0px",

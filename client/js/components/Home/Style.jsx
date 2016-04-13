@@ -2,6 +2,7 @@ module.exports = {
   title: {
     textAlign: "center",
     margin: "30px 0 50px 0",
+    fontFamily: "'Josefin Sans', sans-serif",
   },
   container: {
     padding: "30px 0",
@@ -16,6 +17,7 @@ module.exports = {
     margin: "0px auto",
   },
   button: {
+    fontFamily: "'Josefin Sans', sans-serif",
     color: "white",
     fontSize: "22px",
     backgroundColor: "#4fafc2",
@@ -29,6 +31,7 @@ module.exports = {
     msUserSelect: "none"
   },
   buttonHovered: {
+    fontFamily: "'Josefin Sans', sans-serif",
     color: "white",
     fontSize: "22px",
     backgroundColor: "#33a7ba",
