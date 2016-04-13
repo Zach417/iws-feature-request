@@ -15,10 +15,10 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {
   var body = req.body;
+  var verify = utils.verifyDoc(res, body);
+  if (verify.success === false) { return res.json(verify); }
   Feature.collection.insert(body, function (err, docs) {
     if (err) { return res.json(errors.unknown); }
-    var verify = utils.verifyDoc(res, body);
-    if (verify.success === false) { return res.json(verify); }
     utils.reorderPriorities(body.client, body, function () {
       res.json({success:true});
     });
