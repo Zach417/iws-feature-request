@@ -58,17 +58,17 @@ module.exports = {
   },
 
   reorderPriorities: function (client, insertedFeature, callback) {
-    if (!client) { return; }
-    if (!insertedFeature || !insertedFeature.clientPriority) { return; }
+    if (!client) { return callback(); }
+    if (!insertedFeature || !insertedFeature.clientPriority) { return callback(); }
 
     Feature.find({"client":client}, function (err, features) {
-      if (!features) { return; }
+      if (!features) { return callback(); }
       var filteredFeatures = [];
       var featuresSaved = 0;
 
       features
         .map(function (feature) {
-          if (!feature.clientPriority) { return; }
+          if (!feature.clientPriority) { return callback(); }
           if (feature._id.toString() == insertedFeature._id.toString()) {
             return filteredFeatures.push(feature);
           }
@@ -77,6 +77,10 @@ module.exports = {
           }
           filteredFeatures.push(feature);
         });
+
+      if (!filteredFeatures || filteredFeatures.length === 0) {
+        return callback();
+      }
 
       filteredFeatures
         .sort(function (a,b) {
@@ -87,7 +91,7 @@ module.exports = {
           feature.save(function (err) {
             featuresSaved++;
             if (featuresSaved === filteredFeatures.length) {
-              callback();
+              return callback();
             }
           });
         });
