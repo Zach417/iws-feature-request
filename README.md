@@ -7,6 +7,8 @@ The technology stack of this app is React.js, Node.js, and MongoDB. This stack m
 Furthermore, the front-end communicates with the back-end via a restful API at path /stores. For example, you can get all of the features json by visiting http://54.191.112.74/stores/feature. To get a specific doc's json, visit /stores/feature/:id. The API accepts GET, POST, PUT, and DELETE commands.
 
 ## Running the app in 20 easy steps
+If you want to run the app on your personal machine, then you'll need to install Node.js and MongoDB. Assuming you have done this and you have a MongoDB daemon running, you can skip to commands #19 and #20.
+
 If you want to load the app onto a blank ec2, below is the set of commands for getting this web app running on an ec2 with Amazon Linux AMI 2016.03.0. I usually have issues getting MongoDB off the ground, so if you get an error when you execute #14, I would just recommend that you yum remove mongodb-org, yum autoremove the dependencies, and retry the installation. Double check you're installing MongoDB 2.6 as well.
 #### Basics
 	1.	sudo yum update
@@ -27,13 +29,16 @@ If you want to load the app onto a blank ec2, below is the set of commands for g
 	⁃	[[mongodb-org-2.6] name=MongoDB 2.6 Repository baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/ gpgcheck=0 enabled=1
 	13.	sudo yum install -y mongodb-org
 	14.	sudo service mongod start
-#### Installing NPM packages and linking node for sudo commands
+#### Linking node for sudo commands
 	15.	cd /home/ec2-user/iws-feature-request/
-	16.	npm i
-	17.	sudo ln -s /usr/local/bin/node /usr/bin/node
-	18.	sudo ln -s /usr/local/lib/node /usr/lib/node
-	19.	sudo ln -s /usr/local/bin/npm /usr/bin/npm
-#### Starting the app
+	16.	sudo ln -s /usr/local/bin/node /usr/bin/node
+	17.	sudo ln -s /usr/local/lib/node /usr/lib/node
+	18.	sudo ln -s /usr/local/bin/npm /usr/bin/npm
+#### Running the app
+
+npm i installs all of the required packages for the app and npm start executes server.js, which hosts the app on port 80.
+
+	19.	npm i
 	20.	sudo npm start
 
 ## Other notes
